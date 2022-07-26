@@ -1,0 +1,67 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/* Universal selector for all tag */
+* {
+    margin: 0;
+    padding: 0;
+    /* Border Box Box Model will not count the padding and border to the total width and height of the box model */
+    box-sizing: border-box;
+}
+
+/* Inherited by all child elements under body */
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+    
+}
+
+.header {
+    /* 95% of the viewport height */
+    height: 95vh;
+    /* Linear gradient will change from one color to another with the position stated */
+    background-image: linear-gradient(to right bottom,rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)),url(../img/hero.jpg);
+    /* Cover with adapt nicely to the viewport */
+    background-size: cover;
+    /* Bottom or top of image will stay the same when we resixing the browser */
+    background-position: top;
+    /* Clip the element to reduce the visible part */
+    /* 0 0 stands for no changed (x y) */
+    /* It is the distance from the left top of the element to be cliped */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+}
+
+.logo-box {
+    position: absolute;
+    /* This 40px is relative to the parent element with the position:relative property*/
+    top: 40px;
+    left: 40px;
+}
+
+.logo{
+    height: 35px;
+}
+
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main{
+    
+}
+
+.heading-primary-sub{
+    
+}
