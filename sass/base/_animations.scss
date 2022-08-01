@@ -1,0 +1,54 @@
+/* Animation */
+@keyframes moveInLeft {
+    /* 0% means before the animations actually starts */
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem)
+    }
+
+    /* This will start at the 80% of the animation */
+    80%{
+        transform: translateX(1rem)
+    }
+    /* 100% means final stage */
+    100% {
+        opacity: 1;
+        /* 0 means no change or to original position */
+        transform: translate(0);
+    }
+}
+
+/* Animation */
+@keyframes moveInRight {
+    
+    0% {
+        opacity: 0;
+        transform: translateX(10rem)
+    }
+
+    80%{
+        transform: translateX(-1rem)
+    }
+    
+    100% {
+        opacity: 1;
+       
+        transform: translate(0);
+    }
+}
+
+/* Animation */
+@keyframes moveInBottom {
+    
+    0% {
+        opacity: 0;
+        transform: translateY(3rem)
+    }
+
+    
+    100% {
+        opacity: 1;
+       
+        transform: translate(0);
+    }
+}

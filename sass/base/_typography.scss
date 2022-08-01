@@ -1,0 +1,84 @@
+.heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    /* Remove the shaking after animation */
+    /* backface-visibility: hidden; */
+
+        /* Two types of animation in css: transition animation / */
+    &--main{
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        
+        /* animation */
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        /* Slow the animation and accelerate over time */
+        animation-timing-function: ease-in;
+        /* Repeat the animation */
+        animation-iteration-count: 3;
+        /* The time to delay before start the animation */
+
+        @include respond(phone){
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
+        /* animation-delay: 3s; */
+    }
+
+    &--sub{
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+
+        animation: moveInRight 1s ease-in;
+
+        @include respond(phone){
+            letter-spacing: .5rem;
+
+        }
+    }
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+
+}
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    // This line is to set the background color to where the text is
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    transition: all .2s;
+
+    &:hover {
+        transform: skewY(2deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    }
+}
+
+.heading-tertiary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.paragraph {
+    font-size: $default-font-size;
+
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+}

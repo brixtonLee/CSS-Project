@@ -1,0 +1,149 @@
+// 7-1 Architectures in CSS
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/bg-video";
+@import "components/button";
+@import "components/composition";
+@import "components/feature-box";
+@import "components/card";
+@import "components/story";
+@import "components/form";
+
+
+@import "layout/header";
+@import "layout/footer";
+@import "layout/grid";
+
+@import "pages/home";
+
+/* BEM - Block Element Modifier -> .block__element--modifier */
+
+/* 
+    Three pillars to write good CSS and HTML: 
+    1. Responsive Design
+    2. Maintainable and Scalable Code
+    3. Web Performance
+*/
+
+/* 
+    How css works behind the scenes
+    1. Load HTML -> Parse HTML -> Document Object Model (DOM) 
+    2. In the parse HTML phase: Load CSS -> Parse CSS -> CSS Object Model (CSSOM)
+*/
+
+/* 
+    Every element is the box-model which is made up of
+    1. content (text,images,etc) 
+    2. padding 
+    3. border 
+    4. margin
+
+    5. Fill area -> content, padding, border
+*/
+
+/* 
+    1.Importance (!important) > Specificity (Inline style, IDs, classes/pseudo-classes (counted as 2), elements/pseudo-elements)  > Source Order 
+    2. If there is collided property, look at the order from left to right
+    3. For specificity, (Bigger number win, look from left to right) E.g- (0,1,2,2)
+*/
+
+/* 
+    Converted different types of unit into pixels
+    1. Declared Value (author declaration) -> Cascaded value -> Specified Value (defaulting, if there is no cascade value) -> Computed Value (converting relative values to absolute) -> Used value (final calculations) -> Actual Value (ready to be used in the layout) 
+    2. rem means the times * default values - 1.5 rem = 1.5 * 16 
+    3. % (fonts) = x * parent's computed font size 
+    4. For percentage calculation of lengths: This is calculated based on the parent's computed width 
+    5. em(font) = x * parent computed font size 
+    6. em(lengths) = x * current element computed font size 
+    7. rem = x * root computed font size
+    8. vh / vw = % * viewport height / width 
+*/
+
+/* 
+    Three positioning flows
+    1. Normal flow: position static is the default normal flow
+    2. Floats: Element is removed from the normal flow
+    3. Absolute: position absolute / fixed 
+*/
+
+/* 
+    Z-index
+    1. You must add the position property other than static, so that z-index can function
+    2. The smaller z-index will be position behind
+    3. The default z-index is 0 for position fixed 
+    4. If the z-index is auto, the element stacking is aligned with the order of the element, the lower will the cover the upper one
+*/
+
+/* 
+    Positioning Context
+    1. The default position of the HTML element is static (positioned according to the normal flow of the page
+    2. Position:relative is not taking the element from the document flow, but instead it will move it from the current position to the new position
+    3. Position fixed is taking the element out from the document flow, and the position context is related to the viewport (visible area of the webpage)
+    4. Position:absolute is taking the element out from normal flow and can overlap document, the positioning context is related to the nearest ancestor without position:static
+    5. Position:sticky is the combination of relative and fixed, which will stick to the top or bottom
+
+    Positioning Measurements
+    1. For the element with the position fixed, its width and height percentage is referring to the viewport
+    2. For the element with the position absolute, its width and height percentage is referring to the ancestor / parent content + padding (closest element with the position properties that is not static)
+    3. For the element with the positon static and position relative, its width and height percentange is referring to the ancestor / parent content (closest block level element)
+*/
+
+/* 
+    Overflow
+    1. Overflow:visible - Default
+    2. hidden - The overflow is clipped, and the rest of the content will be invisible
+    3. scroll - The overflow is clipped, and a scrollbar is added to see the rest of the content
+    4. auto - Similar to scroll, but it adds scrollbars only when necessary
+*/
+
+/* 
+    Float:
+    1. It will make the element become inline and float
+    2. float: left or float: right
+    3. The clear property specifies what should happen with the element that is next to a floating element.
+    4. none - The element is not pushed below left or right floated elements. This is default
+    5. left - The element is pushed below left floated elements
+    6. right - The element is pushed below right floated elements
+    7. both - The element is pushed below both left and right floated elements
+    8. inherit - The element inherits the clear value from its parent
+*/
+
+/*
+    Display
+    1. Display inline: You cannot set the width or height of the element, and also the vertical margins and paddings. Elements are sit next to each other
+    2. Display: inline-block: You can set the width or height of the element, and also the vertical margins and paddings. Elements are sit next to each other
+    3. Display: block: You can set the width or height of the element, and also the vertical margins and paddings. Elements aren't sit next to each other
+*/
+
+/* 
+    Pseudo class
+    1. first-child: It will select the element which is the first child of any parent element containing it. E.g- p:first-child will select every first p element which is the first child of a parent
+*/
+
+/*
+    Box-sizing
+    1. box-sizing: border-box- It includes the padding and border of the element in the height and width
+*/
+
+/* 
+    Type of pseudo class:
+    1. selector:link - normal link
+    2. selector:visited - clicked link
+    3. selector:hover - link when hover
+    4. selector:active - currently clicking link
+    5. selector:first-child - first child of any element (iteratively)
+    6. input[type=text]:enabled, input[type=text]:disbaled
+    
+    Pseudo class can also be combined with the html class
+    E.g: selector.className:hover
+
+    Pseudo class with only one : and it is regarding to the state of the element
+    Pseudo element with two :: and it is regarding to the specific part of the element
+*/

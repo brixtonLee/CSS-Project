@@ -1,0 +1,36 @@
+.header {
+    /* 95% of the viewport height */
+    height: 95vh;
+    /* Linear gradient will change from one color to another with the position stated */
+    background-image: linear-gradient(to right bottom,rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)),url(../img/hero.jpg);
+    /* Cover with adapt nicely to the viewport */
+    background-size: cover;
+    /* Bottom or top of image will stay the same when we resixing the browser */
+    background-position: top;
+    /* Clip the element to reduce the visible part */
+    /* 0 0 stands for no changed (x y) */
+    /* It is the distance from the left top of the element to be cliped */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+
+    // & means it will derive the .header
+    &__logo-box {
+        position: absolute;
+        /* This 40px is the positiom from the parent element with the position:relative property*/
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+
+    &__text-box{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        /* Move the element from the current position (- means left or up) */
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
